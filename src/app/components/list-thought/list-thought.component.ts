@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ThoughtService } from '../thoughts/thought.service';
+import { Thought } from '../thoughts/thought/thought';
 
 @Component({
   selector: 'app-list-thought',
@@ -6,28 +8,39 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./list-thought.component.css'],
 })
 export class ListThoughtComponent implements OnInit {
-  listaPensamentos = [
-    {
-      id: 0,
-      conteudo: 'Passa informacoes para o componente filho',
-      autoria: 'Componente pai',
-      modelo: 'modelo3',
-    },
-    {
-      id: 1,
-      conteudo: 'Minha prpriedade é decorada com @Input',
-      autoria: 'Angular',
-      modelo: 'modelo3',
-    },
-    {
-      id: 2,
-      conteudo:
-        'Minha prpriedade é decorada com @Input kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.Minha prpriedade é decorada com @Input kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
-      autoria: 'Angular',
-      modelo: 'modelo3',
-    },
-  ];
-  constructor() {}
+  // listaPensamentos = [
+  //   {
+  //     id: 0,
+  //     conteudo: 'Passa informacoes para o componente filho',
+  //     autoria: 'Componente pai',
+  //     modelo: 'modelo3',
+  //   },
+  //   {
+  //     id: 1,
+  //     conteudo: 'Minha prpriedade é decorada com @Input',
+  //     autoria: 'Angular',
+  //     modelo: 'modelo3',
+  //   },
+  //   {
+  //     id: 2,
+  //     conteudo:
+  //       'Minha prpriedade é decorada com @Input kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk.Minha prpriedade é decorada com @Input kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk',
+  //     autoria: 'Angular',
+  //     modelo: 'modelo3',
+  //   },
+  // ];
 
-  ngOnInit(): void {}
+  listaPensamentos: Thought[] = [];
+
+  constructor(private service: ThoughtService) {}
+
+  // ngOnInit(): void {
+  //   this.service.listar();
+  // }
+
+  ngOnInit(): void {
+    this.service.listar().subscribe((listaPensamentos) => {
+      this.listaPensamentos = listaPensamentos;
+    });
+  }
 }
