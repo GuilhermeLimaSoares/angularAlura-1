@@ -18,4 +18,14 @@ export class ThoughtService {
   criar(pensamento: Thought): Observable<Thought> {
     return this.http.post<Thought>(this.API, pensamento);
   }
+
+  excluir(id: number): Observable<Thought> {
+    const url = `${this.API}/${id}`;
+    return this.http.delete<Thought>(url);
+  }
+
+  buscarPorId(id: number): Observable<Thought> {
+    const url = `${this.API}/${id}`;
+    return this.http.get<Thought>(url);
+  }
 }

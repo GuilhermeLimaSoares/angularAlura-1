@@ -12,6 +12,7 @@ import { ListThoughtComponent } from './components/list-thought/list-thought.com
 import { ThoughtComponent } from './components/thoughts/thought/thought.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ThoughtService } from './components/thoughts/thought.service';
+import { DeleteThoughtComponent } from './components/thoughts/delete-thought/delete-thought.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { ThoughtService } from './components/thoughts/thought.service';
     FooterComponent,
     CreateThoughtComponent,
     ListThoughtComponent,
-    ThoughtComponent
+    ThoughtComponent,
+    DeleteThoughtComponent
   ],
   imports: [
     BrowserModule,
