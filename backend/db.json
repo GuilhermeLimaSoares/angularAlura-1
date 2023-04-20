@@ -4,37 +4,50 @@
       "id": 1,
       "conteudo": "Que bom que vc veio",
       "autoria": "Nay",
-      "modelo": "modelo1"
+      "modelo": "modelo1",
+      "favorito": false
     },
     {
       "id": 2,
       "conteudo": "Estudando Angular",
       "autoria": "Dev Alura",
-      "modelo": "modelo2"
+      "modelo": "modelo2",
+      "favorito": false
     },
     {
       "id": 3,
       "conteudo": "Angular é o melhor'",
       "autoria": "Dev Alura",
-      "modelo": "modelo3"
+      "modelo": "modelo3",
+      "favorito": false
     },
     {
       "conteudo": "React",
       "autoria": "Dev",
       "modelo": "modelo3",
-      "id": 5
+      "id": 5,
+      "favorito": false
     },
     {
       "conteudo": "React",
       "autoria": "Dev",
       "modelo": "modelo1",
-      "id": 6
+      "id": 6,
+      "favorito": false
     },
     {
       "conteudo": "Vue.js",
       "autoria": "Dev",
       "modelo": "modelo2",
-      "id": 7
+      "id": 7,
+      "favorito": false
+    },
+    {
+      "conteudo": "Teste",
+      "autoria": "Angular",
+      "modelo": "modelo2",
+      "id": 8,
+      "favorito": false
     }
   ]
 }

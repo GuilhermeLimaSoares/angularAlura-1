@@ -14,6 +14,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ThoughtService } from './components/thoughts/thought.service';
 import { DeleteThoughtComponent } from './components/thoughts/delete-thought/delete-thought.component';
 import { EditThoughtComponent } from './components/thoughts/edit-thought/edit-thought.component';
+import { ButtonLoadMoreComponent } from './components/list-thought/button-load-more/button-load-more.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { EditThoughtComponent } from './components/thoughts/edit-thought/edit-th
     ListThoughtComponent,
     ThoughtComponent,
     DeleteThoughtComponent,
-    EditThoughtComponent
+    EditThoughtComponent,
+    ButtonLoadMoreComponent
   ],
   imports: [
     BrowserModule,

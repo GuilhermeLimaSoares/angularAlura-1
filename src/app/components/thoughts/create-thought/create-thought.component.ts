@@ -21,6 +21,7 @@ export class CreateThoughtComponent implements OnInit {
     conteudo: '',
     autoria: '',
     modelo: '',
+    favorito: false
   };
 
   formulario!: FormGroup;
@@ -45,6 +46,7 @@ export class CreateThoughtComponent implements OnInit {
         Validators.compose([Validators.required, Validators.minLength(3)]),
       ],
       modelo: ['modelo1'],
+      favorito: [false]
     });
   }
 
@@ -59,5 +61,13 @@ export class CreateThoughtComponent implements OnInit {
 
   cancelThought() {
     this.router.navigate(['/listarPensamento']);
+  }
+
+  enableButton() : string {
+    if(this.formulario.valid){
+      return 'botao'
+    } else {
+      return 'botao__desabilitado'
+    }
   }
 }
